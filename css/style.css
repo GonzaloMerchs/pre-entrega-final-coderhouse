@@ -38,5 +38,66 @@ main p {
 main .banner {
   margin-top: 5rem; }
   main .banner img {
-    height: 700px;
-    width: 800px; }
+    height: 600px;
+    width: 100%; }
+
+/*footer, estilos generales*/
+footer {
+  margin-top: auto;
+  width: 100%;
+  background-color: #0a141d; }
+  footer .grupo-1 {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 37% 31% 31%;
+    grid-gap: 50px;
+    padding: 45px 0px; }
+    footer .grupo-1 .box .red-social a {
+      display: inline-block;
+      text-decoration: none;
+      width: 45px;
+      height: 45px;
+      line-height: 45px;
+      color: #fff;
+      margin-right: 10px;
+      background-color: #0d2033;
+      text-align: center;
+      transition: all 300ms ease; }
+    footer .grupo-1 .box .red-social :hover {
+      color: aqua; }
+    footer .grupo-1 .box p {
+      color: #efefef;
+      margin-bottom: 10px; }
+    footer .grupo-1 .box h3 {
+      color: white;
+      margin-bottom: 25px;
+      font-size: 20px; }
+    footer .grupo-1 .contacto p {
+      width: 18rem; }
+    footer .grupo-1 .imagenes {
+      width: 19rem; }
+      footer .grupo-1 .imagenes img {
+        background-color: #8c9898;
+        width: 53px;
+        height: 42px;
+        border-radius: 3px;
+        margin-bottom: 6px; }
+  footer .grupo-2 {
+    background-color: #0a1a2a;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff; }
+    footer .grupo-2 small {
+      font-size: 15px; }
+  footer .wsp-fixed {
+    position: fixed;
+    right: 0px;
+    bottom: 0px; }
+    footer .wsp-fixed img {
+      display: flex;
+      height: 80px;
+      width: 80px;
+      margin-left: 20px;
+      margin-top: 0,5px; }
