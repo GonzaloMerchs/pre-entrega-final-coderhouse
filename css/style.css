@@ -1,0 +1,42 @@
+/*reset*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none; }
+
+/*body, estilo general*/
+body {
+  background-color: #d9dcdf;
+  font-family: 'Barlow Condensed', sans-serif; }
+
+/*estilos de header*/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; }
+  header nav {
+    background-color: #0d2033; }
+    header nav div a img {
+      width: 250px;
+      height: 70px; }
+  header nav div div .color-menu:hover {
+    border-bottom: 2px solid #58c1e0;
+    color: whitesmoke; }
+  header nav div div b {
+    color: whitesmoke;
+    font-size: 18px; }
+
+/*main, estilo general*/
+main p {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 18px; }
+
+/*home,estilos*/
+main .banner {
+  margin-top: 5rem; }
+  main .banner img {
+    height: 300px;
+    width: 300px; }
