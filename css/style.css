@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*reset*/
 * {
   margin: 0;
@@ -34,12 +35,214 @@ main p {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 18px; }
 
+main h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 60px;
+  color: black;
+  text-align: center; }
+
 /*home,estilos*/
 main .banner {
   margin-top: 5rem; }
   main .banner img {
-    height: 600px;
+    height: 100%;
     width: 100%; }
+
+main .main-index h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 60px;
+  color: black;
+  text-align: center;
+  margin-top: 4rem; }
+
+main .productos-destacados {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; }
+  main .productos-destacados img {
+    height: 320px;
+    width: 290px;
+    margin: 20px;
+    border: solid 2px #646161; }
+
+/*productos, estilos*/
+main .title-productos {
+  margin-top: 7rem;
+  text-align: center; }
+  main .title-productos b {
+    text-align: center;
+    border-bottom: 1px solid grey;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 60px;
+    color: black; }
+
+main .container-productos {
+  height: 84rem;
+  justify-content: center;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  gap: 1rem 2rem;
+  display: grid;
+  grid-template-columns: 20% 18% 18% 18%;
+  grid-template-rows: repeat(8, 250px);
+  grid-template-areas: "section uno dos tres" "section cuatro cinco seis" "section siete ocho nueve" "section diez once doce" "section trece catorce quince"; }
+
+main .container-productos {
+  margin-top: 5rem; }
+  main .container-productos .producto {
+    border: solid 2px #3b3d40; }
+    main .container-productos .producto img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover center; }
+  main .container-productos .uno {
+    grid-area: uno; }
+  main .container-productos .dos {
+    grid-area: dos; }
+  main .container-productos .tres {
+    grid-area: tres; }
+  main .container-productos .cuatro {
+    grid-area: cuatro; }
+  main .container-productos .cinco {
+    grid-area: cinco; }
+  main .container-productos .seis {
+    grid-area: seis; }
+  main .container-productos .siete {
+    grid-area: siete; }
+  main .container-productos .ocho {
+    grid-area: ocho; }
+  main .container-productos .nueve {
+    grid-area: nueve; }
+  main .container-productos .diez {
+    grid-area: diez; }
+  main .container-productos .once {
+    grid-area: once; }
+  main .container-productos .doce {
+    grid-area: doce; }
+  main .container-productos .trece {
+    grid-area: trece; }
+  main .container-productos .catorce {
+    grid-area: catorce; }
+  main .container-productos .quince {
+    grid-area: quince; }
+  main .container-productos .section {
+    height: 545px;
+    grid-area: section;
+    background-color: #9ba0a6;
+    border-radius: 0.5rem;
+    border: solid 1px #363e57; }
+    main .container-productos .section p {
+      width: 100%; }
+
+/*quienes somos, estilos*/
+.box-nuestra-historia {
+  text-align: center;
+  margin-top: 6rem; }
+  .box-nuestra-historia p {
+    margin-bottom: 25px;
+    margin: 0 12rem;
+    padding: 15px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px; }
+  .box-nuestra-historia img {
+    height: 500px;
+    width: 700px;
+    margin-top: 2rem;
+    margin-bottom: 2rem; }
+  .box-nuestra-historia h1 b {
+    font-family: 'Barlow Condensed', sans-serif;
+    text-align: center;
+    border-bottom: 1px solid grey;
+    font-size: 60px;
+    color: black; }
+  .box-nuestra-historia h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 60px;
+    color: black; }
+
+/*mates personalizados estilos*/
+.banner-personzalizados img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover center; }
+
+main .title-personalizados {
+  text-align: center;
+  margin-top: 3rem; }
+  main .title-personalizados b {
+    font-family: 'Barlow Condensed', sans-serif;
+    border-bottom: 1px solid grey;
+    font-size: 60px;
+    color: black; }
+
+main .personalizado-grupo-uno {
+  margin-left: 3rem;
+  margin-top: 4rem;
+  text-align: center; }
+  main .personalizado-grupo-uno h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 60px;
+    color: black; }
+  main .personalizado-grupo-uno div {
+    margin-top: 3rem; }
+
+main .diseños-personalizados {
+  text-align: center; }
+  main .diseños-personalizados img {
+    width: 50rem;
+    height: 40rem; }
+
+main .personalizado-grupo-dos {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center; }
+
+main .mas-utilizados {
+  margin-top: 3rem; }
+
+/*contacto, estilos*/
+.container-principal-contacto {
+  background-color: #171a0e;
+  height: 450px;
+  margin: auto;
+  margin-top: 7rem;
+  width: 1000px;
+  margin-bottom: 6rem; }
+  .container-principal-contacto .container-consulta {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    margin-left: 30px;
+    margin-top: 50px; }
+    .container-principal-contacto .container-consulta .h2-consulta h2 {
+      margin: 5px;
+      padding: 5px;
+      font-size: 50px; }
+  .container-principal-contacto .container-form {
+    background-color: #ecf6d3;
+    display: flex;
+    justify-content: right;
+    border: solid 3px black; }
+    .container-principal-contacto .container-form .form {
+      height: 450px;
+      margin-right: 15px;
+      margin-top: 5px; }
+      .container-principal-contacto .container-form .form .form-section div textarea {
+        width: 450px;
+        height: 320px; }
+      .container-principal-contacto .container-form .form .form-section .form-imput {
+        width: 450px;
+        padding: 10px;
+        margin-top: 10px;
+        background-color: black;
+        resize: none;
+        color: white;
+        border: none;
+        border-top: #6d1417 solid 3px;
+        border-radius: 5px; }
+      .container-principal-contacto .container-form .form .form-section ::placeholder {
+        color: white; }
 
 /*footer, estilos generales*/
 footer {
@@ -48,12 +251,15 @@ footer {
   background-color: #0a141d; }
   footer .grupo-1 {
     width: 100%;
-    max-width: 1200px;
     margin: auto;
     display: grid;
     grid-template-columns: 37% 31% 31%;
     grid-gap: 50px;
     padding: 45px 0px; }
+    footer .grupo-1 .redes {
+      width: 225px; }
+    footer .grupo-1 .imagenes {
+      margin-left: 50px; }
     footer .grupo-1 .box .red-social a {
       display: inline-block;
       text-decoration: none;
@@ -101,3 +307,14 @@ footer {
       width: 80px;
       margin-left: 20px;
       margin-top: 0,5px; }
+
+@media screen and (max-width: 1024px) {
+  .destacado-cuatro {
+    display: none; }
+  .productos-destacados .destacado {
+    height: 200px;
+    width: 200px; } }
+
+@media screen and (max-width: 768px) {
+  -pie-de-pagina .grupo-1 .imagenes {
+    width: 150px; } }
