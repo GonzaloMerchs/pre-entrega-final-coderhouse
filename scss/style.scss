@@ -53,6 +53,16 @@ header{
 
 }
 
+header{
+    nav{
+        .container-fluid{
+            .navbar-toggler{
+                background-color: whitesmoke;
+            }
+        }
+    }
+}
+
 /*main, estilo general*/
 
 main{
@@ -547,8 +557,104 @@ display: none;
 
 @media screen and (max-width:768px) {
 
--pie-de-pagina .grupo-1 .imagenes{
+    footer .grupo-1 .imagenes{
+        width: 250px;
+    }
+
+    footer .grupo-1 .imagenes img{
+        width: 45px;
+        flex-wrap: wrap;
+    }
+
+    footer .grupo-1 .redes .red-social{
+        width: 142px;
+    }
+
+    footer .grupo-1 .redes{
+        width: 142px;
+    }
+
+    footer .grupo-1 .redes .red-social .fa-twitter{
+        margin-top: 13px;
+    }
+
+    header nav .container-fluid div .imagen-logo img{
+        width: 200px;
+    }
+
+    header nav .container-fluid .navbar-collapse .navbar-nav .nav-link b{
+        font-size: 16px;
+    }
+
+    main .main-index .productos-destacados img{
         width: 150px;
+        height: 160px;
+    }
+
+    main .main-index h1 b{
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width:600px) {
+
+    footer .grupo-1{
+        display: grid;
+        grid-gap: 40px;
+        width: 95%;
+        grid-template-columns: 31% 37% 31%;
+    }
+
+    footer .grupo-1 .contacto{
+        width: 215px;
+    }
+    
+    main .banner{
+        margin-top: 4.5rem;
+    }
+
+    footer .grupo-1 .imagenes{
+        width: 190px;
+        margin-left: 25px;
+    }
+
+    footer .grupo-1 .imagenes img{
+        width: 50px;
+        flex-wrap: wrap;
+    }
+
+    footer .grupo-1 .redes .red-social{
+        width: 90px;
+    }
+
+    footer .grupo-1 .redes{
+        width: 90px;
+    }
+
+    footer .grupo-1 .redes .red-social .fa-twitter{
+        margin-top: 13px;
+    }
+
+    footer .grupo-1 .redes .red-social .fa-instagram{
+        margin-top: 13px;
+    }
+
+    header nav .container-fluid div .imagen-logo img{
+        width: 200px;
+        height: 60px;
+    }
+
+    header nav .container-fluid .navbar-collapse .navbar-nav .nav-link b{
+        font-size: 16px;
+    }
+
+    main .main-index .productos-destacados img{
+        width: 150px;
+        height: 160px;
+    }
+
+    main .main-index h1 b{
+        font-size: 40px;
     }
 }
 
