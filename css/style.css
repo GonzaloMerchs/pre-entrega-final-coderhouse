@@ -410,10 +410,10 @@ footer {
   .pie-pagina .grupo-1 .imagenes {
     margin-left: 0; }
   main .banner img {
-    height: 190px; }
-  .wsp-fixed {
+    height: 200px; }
+  footer .wsp-fixed {
     left: 5px;
-    bottom: 10px; }
+    bottom: 20px; }
   footer .grupo-1 .redes .red-social {
     margin-left: 8px; }
   footer .grupo-1 .redes {
@@ -432,3 +432,16 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center; } }
+
+@media screen and (max-width: 439px) {
+  footer .grupo-1 .redes {
+    width: 60px; }
+  footer .wsp-fixed {
+    left: 3px;
+    bottom: 20px;
+    width: 85px; }
+  footer .grupo-1 {
+    display: grid;
+    grid-gap: 40px;
+    width: 100%;
+    grid-template-columns: 34% 26% 39%; } }
