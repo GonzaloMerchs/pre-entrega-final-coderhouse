@@ -400,45 +400,73 @@ footer {
   main .banner img {
     height: 230px; } }
 
-@media screen and (max-width: 320px) {
-  .pie-pagina .grupo-1 {
-    width: 30%;
-    margin: auto;
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 50px;
-    padding: 45px 0px; }
-  .pie-pagina .grupo-1 .imagenes {
-    margin-left: 0; }
-  main .banner img {
-    height: 200px; }
-  footer .wsp-fixed {
-    left: 5px;
-    bottom: 20px; }
-  footer .grupo-1 .redes .red-social {
-    margin-left: 8px; }
+@media screen and (max-width: 470px) {
+  footer .grupo-1 {
+    display: grid;
+    grid-gap: 40px;
+    width: 95%;
+    grid-template-columns: 34% 30% 45%; }
   footer .grupo-1 .redes {
-    width: 90px;
-    margin-left: 10px; }
-  .main-index {
-    margin-top: 5rem;
-    text-align: center; }
-  .productos-destacados .destacado-cuatro {
-    display: none; }
-  .productos-destacados img {
-    height: 150px;
-    width: 120px;
-    margin: 10px; }
-  .productos-destacados {
-    display: flex;
-    flex-direction: column;
-    align-items: center; } }
-
-@media screen and (max-width: 442px) {
-  footer .grupo-1 .redes {
-    width: 60px; }
+    width: 70px; }
   footer .grupo-1 .contacto {
     width: 110px; }
   footer .wsp-fixed {
-    left: 3px;
+    left: 1px;
     bottom: 20px;
-    width: 85px; } }
+    width: 85px; }
+  footer .wsp-fixed img {
+    left: 5px; } }
+
+@media screen and (max-width: 432px) {
+  footer .grupo-1 {
+    display: grid;
+    grid-gap: 40px;
+    width: 95%;
+    grid-template-columns: 34% 30% 45%; } }
+
+@media screen and (max-width: 360px) {
+  .pie-pagina .grupo-1 {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;
+    justify-items: center; }
+  .pie-pagina .grupo-1 .imagenes {
+    margin-left: 0;
+    width: 80%;
+    text-align: center; }
+  footer .grupo-1 .redes .red-social {
+    width: 100%; }
+  footer .grupo-1 .redes {
+    width: 100%;
+    text-align: center; }
+  footer .grupo-1 .contacto {
+    width: 100%;
+    text-align: center; }
+  footer .grupo-1 .contacto p, h3 {
+    width: 100%; }
+  footer .wsp-fixed {
+    left: 5px;
+    bottom: 50px; }
+  footer .wsp-fixed img {
+    text-align: center;
+    margin-left: 0; }
+  main .main-index h1 b {
+    font-size: 35px; } }
+
+@media screen and (max-width: 320px) {
+  header nav .container-fluid div .imagen-logo img {
+    width: 170px;
+    height: 50px; }
+  header nav .container-fluid .navbar-toggler span {
+    height: 20px;
+    width: 15px; }
+  main .banner {
+    margin-top: 4rem; }
+  main .banner img {
+    height: 185px; }
+  main .main-index h1 b {
+    font-size: 30px; }
+  main .main-index h1 {
+    margin-top: 1rem; } }
