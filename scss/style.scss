@@ -136,11 +136,7 @@ main{
     .container-productos{
 
         display: flex;
-        justify-content:space-around;
-        gap: 20px;
-
-    
-
+       
         .productos{
             
             .nuestros-productos{
@@ -149,12 +145,6 @@ main{
                 align-items: center;
                 justify-content: center;
                 flex-wrap: wrap;
-
-                .filtrador-elementos{
-                    background-color: #6d1417;
-                    width: 400px;
-                    height: 600px;
-                }
 
                 .producto{
 
@@ -206,8 +196,9 @@ main{
         }
         
     }
+ }
 
-}
+
 
 .producto a:link, .producto a:visited{
 	color: #ececec;

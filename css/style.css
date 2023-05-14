@@ -89,10 +89,6 @@ main .container-productos {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap; }
-    main .container-productos .productos .nuestros-productos .filtrador-elementos {
-      background-color: #6d1417;
-      width: 400px;
-      height: 600px; }
     main .container-productos .productos .nuestros-productos .producto {
       overflow: hidden;
       background: whitesmoke;
