@@ -1,0 +1,28 @@
+var JsCountdown=Class.create();JsCountdown.prototype={initialize:function(fromDate,toDate,id,daysText,textColor){this.fromDate=new Date(fromDate);this.endDate=new Date(toDate);this.countainer=document.getElementById(id);this.daysText=daysText;this.textColor=textColor;this.numOfDays=[31,28,31,30,31,30,31,31,30,31,30,31];this.borrowed=0,this.years=0,this.months=0,this.days=0;this.hours=0,this.minutes=0,this.seconds=0;this.updateNumOfDays();this.updateCounter();},updateNumOfDays:function(){var dateNow=this.fromDate;var currYear=dateNow.getFullYear();if((currYear%4==0&&currYear%100!=0)||currYear%400==0){this.numOfDays[1]=29;}
+var self=this;setTimeout(function(){self.updateNumOfDays();},(new Date((currYear+1),1,2)-dateNow));},datePartDiff:function(then,now,MAX){var diff=now-then-this.borrowed;this.borrowed=0;if(diff>-1)return diff;this.borrowed=1;return(MAX+diff);},calculate:function(){var futureDate=this.endDate;var currDate=this.fromDate;var dateDiff=new Date(this.endDate-this.fromDate);var secs=Math.floor(dateDiff.valueOf()/1000);this.seconds=(Math.floor(secs/1))%60;this.minutes=(Math.floor(secs/60))%60;this.hours=(Math.floor(secs/3600))%24;if(secs>=86400){this.days=(Math.floor(secs/86400))%100000;}else{this.days=0;}
+var newSecs=this.fromDate.getSeconds()+1;this.fromDate.setSeconds(newSecs);},addLeadingZero:function(value){return value<10?("0"+value):value;},formatTime:function(){this.seconds=this.addLeadingZero(this.seconds);this.minutes=this.addLeadingZero(this.minutes);this.hours=this.addLeadingZero(this.hours);},updateCounter:function(){this.calculate();this.formatTime();var dia0=0;var dia1=0;var hora0=0;var hora1=0;var min0=0;var min1=0;var seg0=0;var seg1=0;if(this.days<10){dia1=parseInt(this.days.toString().split('')[0]);}else{dia0=parseInt(this.days.toString().split('')[0]);dia1=parseInt(this.days.toString().split('')[1]);}
+hora0=parseInt(this.hours.toString().split('')[0]);hora1=parseInt(this.hours.toString().split('')[1]);min0=parseInt(this.minutes.toString().split('')[0]);min1=parseInt(this.minutes.toString().split('')[1]);seg0=parseInt(this.seconds.toString().split('')[0]);seg1=parseInt(this.seconds.toString().split('')[1]);this.countainer.innerHTML="<div class=\"js-countdown"+
+(this.days>0?"-days":"")+"\" style=\"color:"+
+this.textColor+"!important;\">"+
+(this.days>0?"<strong class='cdown_days'>"+
+"</strong>"+
+"<strong class='fondo'>"+dia0+"</strong>"+
+"<strong class='fondo'>"+dia1+"</strong>"+
+"</strong>"+
+"<span class='puntos'>:</span>":"")+
+"<strong class='cdown_hours'>"+
+"<strong class='fondo'>"+hora0+"</strong>"+
+"<strong class='fondo'>"+hora1+"</strong>"+
+"</strong>"+
+"<span class='puntos puntos_horas'>:</span>"+
+"<strong class='cdown_minutes'>"+
+"<strong class='fondo'>"+min0+"</strong>"+
+"<strong class='fondo'>"+min1+"</strong>"+
+"</strong>"+
+"<span class='puntos'>:</span>"+
+"<strong class='cdown_seconds'>"+
+"<strong class='fondo'>"+seg0+"</strong>"+
+"<strong class='fondo'>"+seg1+"</strong>"+
+"</strong>"+
+"</div>";if($j('#countdown-popup #countdown-blackfiday .fondo').text()=='000002'&&($j('#countdown-popup #countdown-blackfiday').is(':visible'))){$j('#countdown-popup').delay(2000).fadeOut();}
+if(this.endDate>this.fromDate){var self=this;setTimeout(function(){self.updateCounter();},1000);}}};

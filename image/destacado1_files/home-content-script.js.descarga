@@ -1,0 +1,125 @@
+$j.fn.cargarEchoSlider2JS=function(json_data){if(json_data){if(json_data["json_data"]=="API"){var object=json_data;var search_url=json_data["search_url"];var vendor=json_data["store"];var slider_search_term=json_data["search_term"];var ciberlunes_descuento=json_data["ciberlunes_descuento"];var ciberlunes_txt=json_data["ciberlunes_txt"];var ciberlunes_text=json_data["ciberlunes_text"];var slider_id=json_data["slider_id"];var base_store=json_data["base_store"];var is_loggedin=json_data["is_loggedin"];var newsletter=json_data["newsletter"];var fxf_tag='';var newCardsClass=json_data["newCards"];if(newsletter=='si'){$j('.slider-news .page-title a').attr('href',search_url)}
+$j('.container-slider#'+slider_id).html('<div class="category-products '+newCardsClass+'"><ul class="products-grid row slider search_results_slider" id="search_results_ajax_'+slider_id+'"></ul></div>'+
+'<a href="#" style="display: none;" class="jcarousel-control-prev">&lsaquo;</a>'+
+'<a href="#" style="display: none;" class="jcarousel-control-next">&rsaquo;</a>');$j.each(json_data["item"],function(sku,values){var name=values["name"];var image=values["image"];var currencyprice=values["currencyprice"];var list_price=values["list_price"];var list_price_local=values["list_price_local"];var porcentaje=values["porcentaje"];var price=values["price"];var price_clean=values["price_clean"];var localprice=values["localprice"];var rating=values["rating"];var url=values["url"];var ciberlunes=values["ciberlunes"];var cuotasSinInteres=values["cuotasSinInteres"];var is_in_wishlist=values["is_in_wishlist"];var importationHTML=values["importationHTML"];var installmentsMessage=values["installmentsMessage"];var img_express=values["img_express"];var img_oferta=values["img_oferta"];var tagHTML=values["tagHTML"];var tech=values["tech"];var AFIPMessage=values["AFIPMessage"];var express=values["deliveryType"];fxf_tag=(!tech&&base_store=='ec')?'<span class="f-x-f"></span>':'';$j('.category-products #search_results_ajax_'+slider_id).append('<li class="item" id="item_'+sku+'" onclick="gaSendEvent(\'Vitrina TM\',\'Búsqueda estática '+slider_search_term+'\',\''+sku+'\')">'+
+'<a href="" class="img_oferta sin_impuestos link_url hidden"></a>'+
+'<a href="" class="img_oferta vineta_oferta link_url hidden"></a>'+
+'<a href="" class="img_express link_url hidden"></a>'+
+'<a class="item_image product_url" href=""><img width="160" height="160" loading="lazy" src="//:0"/></a>'+
+'<div class="block_holder">'+
+'<div class="newCiberLunesTag" style="display: none"  id="ciberlunes_'+sku+'"><div class="clear20px"></div>'+ciberlunes_txt+'</div>'+
+'<h2 class="product-name notranslate"></h2>'+
+'  <div class="price-desde notranslate not-ver-mas">'+
+'	 <span class="precioDesde" style="display: none">Desde</span>'+
+'      <span class="list-price dollar_price"></span>'+
+'      <span class="list-price list-price-local currency_price"></span>'+
+'      <span class="item_porcentaje discount_blackfriday"></span>'+
+'  </div>'+
+'  <div class="price-box">'+
+'<span style="display: none" class="item_porcentaje discount_blackfriday newDiscountBF"></span>'+
+'  </div>'+
+'  <div class="installments-cost"></div>'+
+'  <div class="item-afip"></div>'+
+'  <div class="rating-fav">'+
+'  <div class="rating-box"></div>'+
+'  </div>'+
+'  <div class="item-importation" style="margin-top: 25px;"></div>'+
+'  <div class="tagHTML"></div>'+
+'  <div id="cuotasSinInteres_'+sku+'"></div>'+
+'  <div class="oldCiberLunesTag" id="ciberlunes_'+sku+'"><div class="clear20px"></div>'+ciberlunes_txt+'</div>'+
+fxf_tag+
+'<div class="clear20px"></div>'+
+'</div>'+
+'</li>');if(is_loggedin==1){$j('#'+slider_id+' #item_'+sku+' .rating-fav').append('<div class="fav-container loggedin">'+
+'	<span class="favorite_icon favorite" id="id_'+sku+'"  onclick="AddWishlistGrid(&apos;'+sku+'&apos;)"></span>'+
+'   <img class="cargando-favorite" style="display:none;" id="id_'+sku+'" src="/skin/frontend/traigo/traigo/images/cargando.gif"/></div>');}else{$j('#'+slider_id+' #item_'+sku+' .rating-fav').append('<div class="fav-container not-loggedin">'+
+'	<span class="favorite_icon favorite" id="id_'+sku+'"  onclick="showLogin()"></span>'+
+'</div>');}
+if(cuotasSinInteres!=null){$j('#cuotasSinInteres_'+sku).html(cuotasSinInteres);}
+if(ciberlunes_text!=null){$j('#ciberlunes_'+sku).append(ciberlunes_text);}
+if(url!=null){$j('#'+slider_id+' #item_'+sku+' .product_url').attr('href',url);$j('#'+slider_id+' #item_'+sku+' .link_url').attr('href',url);}
+if(img_oferta!=null&&img_oferta!='no'){$j('#'+slider_id+' #item_'+sku+' .img_oferta.vineta_oferta').prepend('<img src="'+img_oferta+'"/>');$j('#'+slider_id+' #item_'+sku+' .img_oferta.vineta_oferta').removeClass('hidden');}
+if(img_express!=null&&img_express!='no'){$j('#'+slider_id+' #item_'+sku+' .img_express').prepend('<img src="'+img_express+'"/>');}
+if(porcentaje!=null)
+if(porcentaje>0){$j('#'+slider_id+' #item_'+sku+' .item_porcentaje').html(porcentaje+'% OFF');}else{$j('#'+slider_id+' #item_'+sku+' .item_porcentaje').hide();}
+if(name!=null){var aux_html=$j('#'+slider_id+' #item_'+sku+' .product-name').html();aux_html+=name;$j('#'+slider_id+' #item_'+sku+' .product-name').html(aux_html);}
+if(image!=null){if(image==''){image='/skin/frontend/traigo/traigo/images/item_not_available.png';}
+$j('#'+slider_id+' #item_'+sku+' .item_image img').attr('src',image);}
+if(currencyprice!=null){if(currencyprice=='ver más'){$j('#'+slider_id+' #item_'+sku+' .price-box').prepend('<span class="price ver-mas">'+
+'	<span class="dollar_price">ver más</span>'+
+' <span class="currency_price">ver más</span>'+
+'</span>');}else{$j('#'+slider_id+' #item_'+sku+' .price-box').prepend('<span class="regular-price">'+
+'	<span class="price not-ver-mas">'+
+' 	<span class="dollar_price notranslate item_price"></span>'+
+'     	<span class="currency_price all_currency_price currency_price_'+base_store+' item_local_price"></span>'+
+'     </span>'+
+' <span class="solo_ar envio_impuesto hidden">+ envío + impuesto</span>'+
+' <span class="express notranslate"></span>'+
+'</span>');}}
+if(list_price!=null){$j('#'+slider_id+' #item_'+sku+' .list-price').html(list_price);}
+if(list_price_local!=null){$j('#'+slider_id+' #item_'+sku+' .list-price-local').html(list_price_local);}
+if(price!=null){$j('#'+slider_id+' #item_'+sku+' .item_price').html(price);}
+if(price_clean!=null){if((price_clean<200&&base_store=='pe')||(price_clean<30&&base_store=='cl')){$j('#'+slider_id+' #item_'+sku+' .img_oferta.sin_impuestos').html('<img src="/newsletter/materiales/argentina/vineta-productos-libre-impuestos.png"/>');$j('#'+slider_id+' #item_'+sku+' .img_oferta.sin_impuestos').removeClass('hidden');}}
+if(localprice!=null){$j('#'+slider_id+' #item_'+sku+' .item_local_price').html(localprice);}
+if(rating!=null&&rating!=""){$j('#'+slider_id+' #item_'+sku+' .rating-box').html('<div class="rating a-icon a-icon-star a-star-'+rating+'"></div>');}else{$j('#'+slider_id+' #item_'+sku+' .rating-box').hide();$j('#'+slider_id+' #item_'+sku+' .border-line').hide();}
+if(express!=null&&vendor=="amz"){if(express=="express"){$j('#'+slider_id+' #item_'+sku+' .express').html('<img alt="express" src="/skin/frontend/traigo/traigo/images/express_item.png"/>');$j('#'+slider_id+' #item_'+sku+' .img_express').removeClass('hidden');}else{$j('#'+slider_id+' #item_'+sku+' .express').hide();$j('#'+slider_id+' #item_'+sku+' .img_express').addClass('hidden');}}
+if(is_in_wishlist!=null){if(is_in_wishlist==1){$j('#'+slider_id+' #item_'+sku+' .favorite').addClass('active');}}
+if(importationHTML!=null&&importationHTML.trim()){$j('#'+slider_id+' #item_'+sku).find('.item-importation').replaceWith(importationHTML);}
+if(tagHTML!=null&&tagHTML.trim()){$j('#'+slider_id+' #item_'+sku).find('.tagHTML').replaceWith(tagHTML);}
+if(AFIPMessage!=null&&AFIPMessage.trim()){$j('#'+slider_id+' #item_'+sku).find('.item-afip').replaceWith(AFIPMessage);}
+if(installmentsMessage!=null&&installmentsMessage.trim()){$j('#'+slider_id+' #item_'+sku).find('.installments-cost').replaceWith(installmentsMessage);}})
+var jcarousel=$j('#'+slider_id+' .category-products');jcarousel.on('jcarousel:reload jcarousel:create',function(){var width=$j('#'+slider_id+' .category-products').width();var win=$j(window).width();if(win>1200){var items=5;var width_diff=20;width=width/items-width_diff;jcarousel.jcarousel('items').css('width',width+'px');$j('#'+slider_id+' .jcarousel-control-prev').jcarouselControl({target:'-='+items});$j('#'+slider_id+' .jcarousel-control-next').jcarouselControl({target:'+='+items});}else{var items=4
+var width_diff=20;width=width/items-width_diff;jcarousel.jcarousel('items').css('width',width+'px');$j('#'+slider_id+' .jcarousel-control-prev').jcarouselControl({target:'-='+items});$j('#'+slider_id+' .jcarousel-control-next').jcarouselControl({target:'+='+items});}}).jcarousel({wrap:'circular',animation:'slow'});$j('#'+slider_id+' .jcarousel-control-prev').attr('style','display:block;');$j('#'+slider_id+' .jcarousel-control-next').attr('style','display:block;');if(ciberlunes_descuento){$j('.cms-page-view .products-grid.search_results_slider li.item').css('height','auto');$j('.cms-index-index .products-grid.search_results_slider li.item').css('height','auto');}}else{var object=json_data;var search_url=json_data["search_url"];var slider_search_term=json_data["search_term"];var ciberlunes=json_data["ciberlunes"];var ciberlunes_descuento=json_data["ciberlunes_descuento"];var ciberlunes_txt=json_data["ciberlunes_txt"];var slider_id=json_data["slider_id"];var base_store=json_data["base_store"];var is_loggedin=json_data["is_loggedin"];var newsletter=json_data["newsletter"];var fxf_tag='';var cuotasSinInteres=json_data["cuotasSinInteres"];if(newsletter=='si'){$j('.slider-news .page-title a').attr('href',search_url)}
+$j('.container-slider#'+slider_id).html('<div class="category-products"><ul class="products-grid row slider search_results_slider" id="search_results_ajax_'+slider_id+'"></ul></div>'+
+'<a href="#" style="display: none;" class="jcarousel-control-prev">&lsaquo;</a>'+
+'<a href="#" style="display: none;" class="jcarousel-control-next">&rsaquo;</a>');$j.each(object,function(property,value){if(property=='item'){$j.each(value,function(sku,values){fxf_tag=(!values.tech&&base_store=='ec')?'<span class="f-x-f"></span>':'';$j('.category-products #search_results_ajax_'+slider_id).append('<li class="item" id="item_'+sku+'" onclick="gaSendEvent(\'Vitrina TM\',\'Búsqueda estática '+slider_search_term+'\',\''+sku+'\')">'+
+'<a href="" class="img_oferta sin_impuestos link_url hidden"></a>'+
+'<a href="" class="img_oferta vineta_oferta link_url hidden"></a>'+
+'<a href="" class="img_express link_url hidden"></a>'+
+'<a class="item_image product_url" href=""><img width="160px" height="160px" src="//:0"/></a>'+
+'<div class="block_holder">'+
+'<h2 class="product-name notranslate"></h2>'+
+'  <div class="price-desde notranslate not-ver-mas">'+
+'      <span class="list-price dollar_price"></span>'+
+'      <span class="list-price list-price-local currency_price"></span>'+
+'      <span class="item_porcentaje discount_blackfriday"></span>'+
+'  </div>'+
+'  <div class="price-box">'+
+'  </div>'+
+'  <div class="installments-cost"></div>'+
+'  <div class="item-afip"></div>'+
+'  <div class="rating-fav">'+
+'      <div class="rating-box"></div>'+
+'  </div>'+
+'  <div class="item-importation" style="margin-top: 25px;"></div>'+
+'  <div class="tagHTML"></div>'+
+'  <div id="cuotasSinInteres_'+sku+'"></div>'+
+'  <div id="ciberlunes_'+sku+'"><div class="clear20px"></div>'+ciberlunes_txt+'</div>'+
+fxf_tag+
+'<div class="clear20px"></div>'+
+'</div>'+
+'</li>');if(is_loggedin==1){$j('#'+slider_id+' #item_'+sku+' .rating-fav').append('      <div class="fav-container loggedin">'+
+'          <span class="favorite_icon favorite" id="id_'+sku+'"  onclick="AddWishlistGrid(&apos;'+sku+'&apos;)"></span>'+
+'          <img class="cargando-favorite" style="display:none;" id="id_'+sku+'" src="/skin/frontend/traigo/traigo/images/cargando.gif"/></div>');}else{$j('#'+slider_id+' #item_'+sku+' .rating-fav').append('      <div class="fav-container not-loggedin">'+
+'          <span class="favorite_icon favorite" id="id_'+sku+'"  onclick="showLogin()"></span>'+
+'      </div>');}
+$j.each(values,function(propertyItem,valueItem){if(propertyItem=='cuotasSinInteres'&&valueItem){$j('#cuotasSinInteres_'+sku).html(valueItem);}
+if(propertyItem=='ciberlunes_text'&&valueItem){$j('#ciberlunes_'+sku).append(valueItem);}else if(propertyItem=='status'){$j('#'+slider_id+' #item_'+sku).addClass('item_status_'+valueItem);}else if(propertyItem=='url'){$j('#'+slider_id+' #item_'+sku+' .product_url').attr('href',valueItem);$j('#'+slider_id+' #item_'+sku+' .link_url').attr('href',valueItem);}else if(propertyItem=='img_oferta'){if(valueItem!='no'){$j('#'+slider_id+' #item_'+sku+' .img_oferta.vineta_oferta').prepend('<img src="'+valueItem+'"/>');$j('#'+slider_id+' #item_'+sku+' .img_oferta.vineta_oferta').removeClass('hidden');}}else if(propertyItem=='img_express'){if(valueItem!='no'){$j('#'+slider_id+' #item_'+sku+' .img_express').prepend('<img src="'+valueItem+'"/>');}}else if(propertyItem=='porcentaje'){if(valueItem>0){$j('#'+slider_id+' #item_'+sku+' .item_porcentaje').html(valueItem+'% OFF');}else{$j('#'+slider_id+' #item_'+sku+' .item_porcentaje').hide();}}else if(propertyItem=='name'){var aux_html=$j('#'+slider_id+' #item_'+sku+' .product-name').html();aux_html+=valueItem;$j('#'+slider_id+' #item_'+sku+' .product-name').html(aux_html);}else if(propertyItem=='image'){if(valueItem==''){valueItem='/skin/frontend/traigo/traigo/images/item_not_available.png';}
+$j('#'+slider_id+' #item_'+sku+' .item_image img').attr('src',valueItem);}else if(propertyItem=='currencyprice'){if(valueItem=='ver más'){$j('#'+slider_id+' #item_'+sku+' .price-box').prepend('      <span class="price ver-mas">'+
+'          <span class="dollar_price">ver más</span>'+
+'          <span class="currency_price">ver más</span>'+
+'      </span>');}else{$j('#'+slider_id+' #item_'+sku+' .price-box').prepend('      <span class="regular-price">'+
+'          <span class="price not-ver-mas">'+
+'              <span class="dollar_price notranslate item_price"></span>'+
+'              <span class="currency_price all_currency_price currency_price_'+base_store+' item_local_price"></span>'+
+'          </span>'+
+'           <span class="solo_ar envio_impuesto hidden">+ envío + impuesto</span>'+
+'          <span class="express notranslate"></span>'+
+'      </span>');}}else if(propertyItem=='list_price'){$j('#'+slider_id+' #item_'+sku+' .list-price').html(valueItem);}else if(propertyItem=='list_price_local'){$j('#'+slider_id+' #item_'+sku+' .list-price-local').html(valueItem);}else if(propertyItem=='desde_price'){if(valueItem!='no'){$j('#'+slider_id+' #item_'+sku+' .regular-price .price').append('<span class="dollar_price notranslate desde_price">- '+valueItem+'</span>');if(ciberlunes){$j('#ciberlunes_'+sku).append('<span class="price_prex">U$S 10 GRATIS</span>');}}}else if(propertyItem=='desde_price_local'){if(valueItem!='no'){$j('#'+slider_id+' #item_'+sku+' .desde_price_local').append('<span class="currency_price all_currency_price currency_price_'+base_store+' desde_price_local">- '+valueItem+'</span>');}}else if(propertyItem=='price'){$j('#'+slider_id+' #item_'+sku+' .item_price').html(valueItem);}else if(propertyItem=='price_clean'){if((valueItem<200&&base_store=='pe')||(valueItem<30&&base_store=='cl')){$j('#'+slider_id+' #item_'+sku+' .img_oferta.sin_impuestos').html('<img src="/newsletter/materiales/argentina/vineta-productos-libre-impuestos.png"/>');$j('#'+slider_id+' #item_'+sku+' .img_oferta.sin_impuestos').removeClass('hidden');}}else if(propertyItem=='localprice'){$j('#'+slider_id+' #item_'+sku+' .item_local_price').html(valueItem);}else if(propertyItem=='rating'){if(valueItem!='n/a'){$j('#'+slider_id+' #item_'+sku+' .rating-box').html('<div class="rating '+valueItem+'"></div>');}else{$j('#'+slider_id+' #item_'+sku+' .rating-box').hide();$j('#'+slider_id+' #item_'+sku+' .border-line').hide();}}else if(propertyItem=='allstatuses'){if(valueItem=='disable'){$j('#'+slider_id+' #item_'+sku).append('<div class="status_box"><span>Este producto supera lo máximo permitido por la aduana de su país.</span></div>');}
+$j('#'+slider_id+' #item_'+sku+' .status_box').addClass('status_'+valueItem);}else if(propertyItem=='express'){if(valueItem!='no'){$j('#'+slider_id+' #item_'+sku+' .express').html('<img alt="express" src="/skin/frontend/traigo/traigo/images/express_item.png"/>');$j('#'+slider_id+' #item_'+sku+' .img_express').removeClass('hidden');}else{$j('#'+slider_id+' #item_'+sku+' .express').hide();$j('#'+slider_id+' #item_'+sku+' .img_express').addClass('hidden');}}else if(propertyItem=='is_in_wishlist'){if(valueItem==1){$j('#'+slider_id+' #item_'+sku+' .favorite').addClass('active');}}else if(propertyItem==='importationHTML'&&valueItem.trim()){$j('#'+slider_id+' #item_'+sku).find('.item-importation').replaceWith(valueItem);}else if(propertyItem==='tagHTML'&&valueItem.trim()){$j('#'+slider_id+' #item_'+sku).find('.tagHTML').replaceWith(valueItem);}else if(propertyItem==='AFIPMessage'&&valueItem.trim()){$j('#'+slider_id+' #item_'+sku).find('.item-afip').replaceWith(valueItem);}else if(propertyItem==='installmentsMessage'&&valueItem.trim()){$j('#'+slider_id+' #item_'+sku).find('.installments-cost').replaceWith(valueItem);}});});}});var jcarousel=$j('#'+slider_id+' .category-products');jcarousel.on('jcarousel:reload jcarousel:create',function(){var width=$j('#'+slider_id+' .category-products').width();var win=$j(window).width();const isARCart=(window.location.href.indexOf('/ar/checkout/cart')!=-1)
+if(win>1200){var items=5;if(isARCart)items=4;var width_diff=20;width=width/items-width_diff;jcarousel.jcarousel('items').css('width',width+'px');$j('#'+slider_id+' .jcarousel-control-prev').jcarouselControl({target:'-='+items});$j('#'+slider_id+' .jcarousel-control-next').jcarouselControl({target:'+='+items});}else{var items=4
+if(isARCart)items=3;var width_diff=20;width=width/items-width_diff;jcarousel.jcarousel('items').css('width',width+'px');$j('#'+slider_id+' .jcarousel-control-prev').jcarouselControl({target:'-='+items});$j('#'+slider_id+' .jcarousel-control-next').jcarouselControl({target:'+='+items});}}).jcarousel({wrap:'circular',animation:'slow'});$j('#'+slider_id+' .jcarousel-control-prev').attr('style','display:block;');$j('#'+slider_id+' .jcarousel-control-next').attr('style','display:block;');if(ciberlunes_descuento){$j('.cms-page-view .products-grid.search_results_slider li.item').css('height','auto');$j('.cms-index-index .products-grid.search_results_slider li.item').css('height','auto');}}}}
+function loadScrolledContent(cachekey,skus,sliderId,ajaxUrl){jQuery.ajax({url:ajaxUrl,type:'GET',data:{skus:skus,cachekey:cachekey,containerId:sliderId},dataType:"html"}).done(function(data){jQuery('#loading_'+sliderId).remove();jQuery('#'+sliderId+' #promo_content_container').html(data);jQuery('#'+sliderId+' .otro-container-slider').show();let jcarousel=jQuery('#'+sliderId+' .category-products');jcarousel.on('jcarousel:reload jcarousel:create',function(){let width=jcarousel.width();let win=jQuery(window).width();let items=5;const isARCart=(window.location.href.indexOf('/ar/checkout/cart')!=-1)
+if(isARCart)items=4;if(isARCart&&(win<1200))items=3;let width_diff=20;if(win<1200)items=4;width=width/items-width_diff;jcarousel.jcarousel('items').css('width',width+'px');jQuery('#'+sliderId+' .jcarousel-control-prev').jcarouselControl({target:'-='+items});jQuery('#'+sliderId+' .jcarousel-control-next').jcarouselControl({target:'+='+items});}).jcarousel({wrap:'circular',animation:'slow'});});}
+function checkForWaitingForLoad(){if(jQuery('.waitingForLoad').length>0){let scrollTop=jQuery(window).scrollTop();let windowHeight=jQuery(window).height();let element=jQuery('.waitingForLoad');$j.each(element,function(key,element){let elementOffset=element.offsetTop;if(elementOffset>0&&(scrollTop+windowHeight>elementOffset)){element.classList.remove('waitingForLoad');let cacheKey=element.dataset.cachekey+'_html';let ajaxurl=element.dataset.ajaxurl;let skus=element.dataset.skus;loadScrolledContent(cacheKey,skus,element.id,ajaxurl);}});}}
+jQuery(document).ready(function(){checkForWaitingForLoad();});jQuery(window).scroll(function(){checkForWaitingForLoad();});$j(window).load(function(){try{const slider=$j('.slider-ajax-home');if(slider&&slider.length>0&&typeof getSliderHomeContent==="function"){$j('.slider-ajax-home').each(function(){let slider_id=$j(this).attr('id');let search=$j(this).data('search');let limit=$j(this).data('limit');let cache_refresh=$j(this).data('cache_refresh');let newsletter=$j(this).data('newsletter');getSliderHomeContent(slider_id,search,limit,cache_refresh,newsletter);});}}catch(e){console.error('slider-ajax-home error',e);}});
