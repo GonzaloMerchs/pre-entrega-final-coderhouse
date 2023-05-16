@@ -17,7 +17,8 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%; }
+  width: 100%;
+  z-index: 1; }
   header nav {
     background-color: #2a3a49; }
     header nav div a img {
