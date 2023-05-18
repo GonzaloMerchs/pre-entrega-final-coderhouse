@@ -178,6 +178,9 @@ main .container-productos {
   width: 100%;
   height: 100%; }
 
+main .link-pdf {
+  display: none; }
+
 main .tipografias {
   text-align: center;
   margin-top: 2rem;
@@ -230,38 +233,38 @@ main .title-contactanos {
   color: black;
   text-align: center; }
 
-main .contacto {
+main .contacto-form {
   width: 500px;
   margin: 0 auto;
   border: 1px solid #393232;
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 2rem;
-  background-color: #4b6682; }
-  main .contacto label {
+  background-color: #101920; }
+  main .contacto-form label {
     display: block;
     margin-bottom: 10px;
     color: whitesmoke;
     font-weight: bold;
     font-size: 18px; }
-  main .contacto input[type="text"],
-  main .contacto input[type="email"],
-  main .contacto textarea {
+  main .contacto-form input[type="text"],
+  main .contacto-form input[type="email"],
+  main .contacto-form textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-bottom: 20px;
     resize: none; }
-  main .contacto input[type="submit"] {
+  main .contacto-form input[type="submit"] {
     background-color: whitesmoke;
     color: #2b2828;
     border: none;
     padding: 10px 20px;
     border-radius: 4px;
     cursor: pointer; }
-  main .contacto input[type="submit"]:hover {
-    background-color: #141414;
+  main .contacto-form input[type="submit"]:hover {
+    background-color: #2d95b5;
     color: whitesmoke; }
 
 /*footer, estilos generales*/
@@ -474,6 +477,11 @@ footer {
     height: 300px; } }
 
 @media screen and (max-width: 600px) {
+  main .contacto-form {
+    width: 350px; }
+  main .diseños-personalizados img {
+    width: 420px;
+    height: 300px; }
   main .box-nuestra-historia {
     margin-top: 3rem; }
   main .box-nuestra-historia .imagen-quienes-somos img {
@@ -517,55 +525,61 @@ footer {
     display: none; } }
 
 @media screen and (max-width: 480px) {
+  main .title-personalizados b {
+    font-size: 45px; }
+  main .personalizado-grupo-uno {
+    margin-top: 1rem; }
+    main .personalizado-grupo-uno h2 {
+      font-size: 40px; }
+  main .mas-utilizados {
+    margin-top: 1rem;
+    font-size: 40px; }
+  main h2 {
+    font-size: 40px; }
   footer .grupo-1 .imagenes {
-    width: 150px; }
+    width: 100%; }
   footer .grupo-1 .contacto {
-    width: 180px; }
+    width: 100%; }
   footer .grupo-1 .contacto p {
-    width: 100px; }
+    width: 100%; }
   footer .grupo-1 .redes {
-    width: 70px; }
-  footer .wsp-fixed {
-    width: 50px;
-    left: 5px;
-    bottom: 10px; }
+    width: 100%; }
   footer .grupo-1 .redes .red-social {
-    width: 65px; }
+    width: 100%; }
   footer .grupo-1 {
     display: grid;
-    grid-gap: 40px;
-    width: 95%;
+    grid-gap: 20px;
+    width: 100%;
     grid-template-columns: 35% 32% 32%; }
   .main-index .productos-destacados .destacado-tres {
     display: none; }
   main .banner img {
-    height: 230px; }
-  main .contacto {
-    width: 300px; } }
+    height: 230px; } }
 
-@media screen and (max-width: 470px) {
-  footer .grupo-1 {
-    display: grid;
-    grid-gap: 40px;
-    width: 95%;
-    grid-template-columns: 34% 30% 45%; }
-  footer .grupo-1 .redes {
-    width: 70px; }
-  footer .grupo-1 .contacto {
-    width: 110px; }
-  footer .wsp-fixed {
-    left: 1px;
-    bottom: 20px;
-    width: 85px; }
-  footer .wsp-fixed img {
-    left: 5px; } }
+@media screen and (max-width: 450px) {
+  main .diseños-personalizados img {
+    display: none; }
+  main .tipografias {
+    display: none; }
+  main .link-pdf {
+    display: block;
+    text-decoration: none;
+    transition: color 0.3s; }
+    main .link-pdf .mas-utilizados {
+      border: solid 1px gray;
+      width: 100%; }
+  main .link-pdf .mas-utilizados:hover {
+    color: #d2d2dc;
+    background-color: #4b6682; } }
 
 @media screen and (max-width: 432px) {
   footer .grupo-1 {
     display: grid;
-    grid-gap: 40px;
-    width: 95%;
-    grid-template-columns: 34% 30% 45%; } }
+    grid-gap: 20px;
+    width: 100%;
+    grid-template-columns: 35% 32% 32%; }
+  main .contacto-form {
+    width: 250px; } }
 
 @media screen and (max-width: 360px) {
   .pie-pagina .grupo-1 {

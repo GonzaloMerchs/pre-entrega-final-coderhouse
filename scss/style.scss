@@ -183,10 +183,14 @@ main{
 
                     .info-producto{
 
+                       
+
                         .producto-btn{
+                        
 
                             b{
                                 font-size: 18px;
+                            
                             }
                             
                         }
@@ -310,6 +314,10 @@ main{
 
     main{
 
+        .link-pdf{
+            display: none;
+        }
+
         .tipografias{
             text-align: center;
             margin-top: 2rem;
@@ -385,14 +393,14 @@ main{
             
         }
 
-        .contacto{
+        .contacto-form{
             width: 500px;
             margin: 0 auto;
             border: 1px solid #393232;
             padding: 20px;
             border-radius: 8px;
             margin-bottom: 2rem;
-            background-color:#4b6682 ;
+            background-color:#101920 ;
 
             label{
 
@@ -426,7 +434,7 @@ main{
               }
           
               input[type="submit"]:hover {
-                background-color: #141414;
+                background-color: #2d95b5;
                 color: whitesmoke;
               }
         }
@@ -786,6 +794,15 @@ display: none;
 
 @media screen and (max-width:600px) {
 
+    main .contacto-form{
+        width: 350px;
+    }
+
+    main .diseños-personalizados img{
+        width: 420px;
+        height: 300px;
+    }
+
     main .box-nuestra-historia{
         margin-top: 3rem;
     }
@@ -862,36 +879,51 @@ display: none;
 }
 
 @media screen and (max-width:480px){
+    main .title-personalizados b{
+        font-size: 45px;
+    }
+
+    main .personalizado-grupo-uno{
+        margin-top: 1rem;
+        h2{
+        font-size: 40px;
+        }
+    }
+
+    main .mas-utilizados{
+        margin-top: 1rem;
+        font-size: 40px;
+    }
+
+    main h2{
+        font-size: 40px;
+    }
+
+
     footer .grupo-1 .imagenes{
-        width: 150px;
+        width: 100%;
     }
 
     footer .grupo-1 .contacto {
-        width: 180px;
+        width: 100%;
     }
 
     footer .grupo-1 .contacto p{
-        width: 100px;
+        width: 100%;
     }
 
     footer .grupo-1 .redes{
-        width: 70px;
-    }
-
-    footer .wsp-fixed{
-        width: 50px;
-        left: 5px;
-        bottom: 10px;
+        width: 100%;
     }
 
     footer .grupo-1 .redes .red-social{
-        width: 65px;
+        width: 100%;
     }
 
     footer .grupo-1{
         display: grid;
-        grid-gap: 40px;
-        width: 95%;
+        grid-gap: 20px;
+        width: 100%;
         grid-template-columns: 35% 32% 32%;
     }
 
@@ -902,47 +934,51 @@ display: none;
     main .banner img{
         height: 230px;
     }
-
-    main .contacto{
-        width: 300px;
-    }
 }
 
- @media screen and (max-width: 470px){
-
-    footer .grupo-1{
-        display: grid;
-        grid-gap: 40px;
-        width: 95%;
-        grid-template-columns: 34% 30% 45%;
+@media screen and (max-width:450px){
+    main .diseños-personalizados img{
+        display: none;
     }
 
-    footer .grupo-1 .redes{
-        width: 70px;
+    main .tipografias{
+        display: none;
     }
 
-    footer .grupo-1 .contacto{
-        width: 110px;
+    main .link-pdf{
+        display: block;
+        text-decoration: none;
+        transition: color 0.3s;
+        
+        
+        
+         .mas-utilizados{
+            border: solid 1px gray;
+            width: 100%;
+           
+            
+         }
     }
 
-    footer .wsp-fixed{
-            left: 1px;
-            bottom: 20px;
-            width: 85px;
- }
+    main .link-pdf .mas-utilizados:hover {
+        color: rgb(210, 210, 220);
+        background-color: #4b6682;
+      }
 
- footer .wsp-fixed img{
-    left: 5px;
- }
+
 }
 
 @media screen and (max-width: 432px){
     footer .grupo-1{
         display: grid;
-        grid-gap: 40px;
-        width: 95%;
-        grid-template-columns: 34% 30% 45%;
-}
+        grid-gap: 20px;
+        width: 100%;
+        grid-template-columns: 35% 32% 32%;
+    }
+
+    main .contacto-form{
+        width: 250px;
+    }
 }
 
 @media screen and (max-width: 360px){
