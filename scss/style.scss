@@ -334,9 +334,10 @@ main{
         }
 
         .personalizado-grupo-uno{
-            margin-left: 3rem;
+    
             margin-top: 4rem;
             text-align: center;
+            padding: 30px;
             h2{
                 font-family: 'Barlow Condensed', sans-serif;
                 font-size: 60px;
@@ -362,6 +363,8 @@ main{
             margin-top: 30px;
             margin-bottom: 30px;
             text-align: center;  
+            padding-left: 50px;
+            padding-right: 50px;
         }
 
         .mas-utilizados{
@@ -439,15 +442,15 @@ footer{
     width: 100%;
     background-color: #0a141d;
 
-        .grupo-1{
+    .grupo-1{
 
-        width: 100%;
-        margin: auto;
-        display: grid;
-        grid-template-columns: 25% 25% 25% 24% ;
-        grid-gap: 5px;
-        padding: 45px 20px 10px 20px;
-        justify-content: center;
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 24% ;
+    grid-gap: 5px;
+    padding: 45px 20px 10px 20px;
+    justify-content: center;
 
         .ir-arriba{
             width: 100%;
@@ -461,6 +464,7 @@ footer{
                 border-bottom: solid white 0.5px;
             } 
             }
+        }
 
         .redes{
             width: 100%;
@@ -531,6 +535,7 @@ footer{
                 }
             }
         }
+        
 
         .grupo-2{
             background-color: #0a1a2a;
@@ -556,16 +561,22 @@ footer{
                 margin-top: 0,5px;
             }
         }
-}
+    }
 
-@media screen and (max-width:1257px){
-    footer .grupo-1{
-        display: grid;
-        grid-gap: 40px;
-        width: 95%;
-        grid-template-columns: 39% 30% 30%;
+
+
+@media screen and (max-width:1220px){
+    footer .grupo-1 .imagenes{
+        width: 230px;
+    }
+
+    footer .grupo-1 .ir-arriba a img{
+        width: 180px;
+        height: 60px;
     }
 }
+
+
 
 @media screen and (max-width:1024px){
 .destacado-cuatro{
@@ -575,6 +586,31 @@ display: none;
     height: 200px;
     width: 200px;
 }
+}
+
+@media screen and (max-width:1005px){
+    footer .grupo-1 .imagenes{
+        width: 200px;
+    }
+
+    footer .grupo-1 .ir-arriba a img{
+        width: 180px;
+        height: 60px;
+    }
+    
+    main .diseños-personalizados img{
+        width: 600px;
+        height: 500px;
+    }
+
+    main .tipografias img{
+        width: 600px;
+        height: 400px;
+    }
+
+    main h2{
+        font-size: 45px;
+    }
 }
 
 @media screen and (max-width:950px){
@@ -593,33 +629,31 @@ display: none;
 @media screen and (max-width:840px){
     footer .grupo-1{
         display: grid;
-        grid-gap: 40px;
-        width: 95%;
-        grid-template-columns: 28% 33% 38%;
+        grid-gap: 10px;
+        width: 100%;
+        grid-template-columns: 25% 25% 25% 24%;
     }
 
     footer .grupo-1 .imagenes{
         text-align: center;
         margin-left: 0;
-        width: 250px;
+        width: 200px;
     }
 
     footer .grupo-1 .contacto{
         text-align: center;
-        width: 265px;
+        width: 210px;
 
         p{
-            width: 265px;  
+            width: 210px;  
         }
     }
 
     footer .grupo-1 .redes{
-        width: 150px;
+        width: 180px;
         text-align: center;
 
-        .red-social .fa-twitter{
-            margin-top: 12px;
-        }
+       
     }
 }
 
@@ -638,8 +672,38 @@ display: none;
 
 @media screen and (max-width:768px) {
 
+    footer .grupo-1{
+        display: grid;
+        grid-gap: 10px;
+        width: 100%;
+        grid-template-columns: 30% 30% 30%;
+        justify-content: center;
+    }
+
+    footer .grupo-1 .ir-arriba{
+        display: none;
+    }
+
+    main .diseños-personalizados img{
+        width: 480px;
+        height: 350px;
+    }
+
+    main .tipografias img{
+        width: 400px;
+        height: 200px;
+    }
+
+    footer .grupo-1 .contacto{
+        width: 100%;
+        text-align: center;
+        p{
+            width: 100%;
+        }
+    }
+
     footer .grupo-1 .imagenes{
-        width: 250px;
+        width: 100%;
     }
 
     footer .grupo-1 .imagenes img{
@@ -648,11 +712,13 @@ display: none;
     }
 
     footer .grupo-1 .redes .red-social{
-        width: 142px;
+        width: 100%;
+        text-align: center;
     }
 
     footer .grupo-1 .redes{
-        width: 142px;
+        width: 100%;
+        text-align: center;
     }
 
     footer .grupo-1 .redes .red-social .fa-twitter{
@@ -678,6 +744,40 @@ display: none;
 }
 
 @media screen and (max-width:700px){
+
+    footer .grupo-1{
+        display: grid;
+        grid-gap: 10px;
+        width: 100%;
+        grid-template-columns: 30% 30% 30%;
+        justify-content: center;
+        align-content: center;
+    }
+
+    footer .grupo-1 .ir-arriba{
+        display: none;
+    }
+
+    footer .grupo-1 .contacto{
+        width: 100%;
+
+        p{
+            width: 100%;
+        }
+    }
+
+    footer .grupo-1 .redes{
+        width: 100%;
+    }
+
+    footer .grupo-1 .redes h3{
+        width: 100%;
+    }
+
+    footer .grupo-1 .redes .red-social{
+        width: 100%;
+    }
+
     main .box-nuestra-historia .imagen-quienes-somos img{
         width: 500px;
         height: 300px;
@@ -699,11 +799,11 @@ display: none;
         display: grid;
         grid-gap: 40px;
         width: 95%;
-        grid-template-columns: 31% 37% 31%;
+        grid-template-columns: 35% 30% 30%;
     }
 
     footer .grupo-1 .contacto{
-        width: 215px;
+        width:100%;
     }
     
     main .banner{
@@ -711,8 +811,7 @@ display: none;
     }
 
     footer .grupo-1 .imagenes{
-        width: 190px;
-        margin-left: 25px;
+        width: 100%;
     }
 
     footer .grupo-1 .imagenes img{
@@ -721,11 +820,11 @@ display: none;
     }
 
     footer .grupo-1 .redes .red-social{
-        width: 90px;
+        width: 100%;
     }
 
     footer .grupo-1 .redes{
-        width: 90px;
+        width: 100%;
     }
 
     footer .grupo-1 .redes .red-social .fa-twitter{
