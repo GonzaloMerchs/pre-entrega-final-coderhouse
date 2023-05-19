@@ -1,0 +1,134 @@
+//variables
+
+@import "../utilidades/variables";
+@import "../utilidades/mixin";
+@import "../utilidades/extend";
+
+
+/*productos, estilos*/
+
+main{
+
+    .title-productos{
+
+        @include titulos;
+
+        b{
+            text-align: center;
+            margin-bottom: 5rem;
+            font-size: 4rem;
+            @extend %border;
+        }
+    }
+
+
+    .container-productos{
+
+        display: flex;
+
+        .destacado{
+            width: 100%;
+        }
+       
+        .productos{
+
+            .destacados{
+                align-content: center;
+            }
+            
+            .nuestros-productos{
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+
+                .producto{
+
+                    overflow: hidden;
+                    background: whitesmoke;
+                    color: #21201e;
+                    text-align: center;
+                    width: 240px;
+                    height: 400px;
+                    padding: 2rem;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 1.2rem;
+                    border: solid 0.5px rgb(173, 161, 161);
+                    margin: 2rem;
+
+                    .info-producto{
+
+                       
+
+                        .producto-btn{
+                        
+
+                            b{
+                                font-size: 18px;
+                            
+                            }
+                            
+                        }
+                    }
+
+                    img{
+
+                        height: 200px;
+                        margin: 1rem;
+                        transition: all 0.3s;
+                        
+                        
+                    }
+                }
+
+                .producto:hover{
+
+                    box-shadow: 5px 15px 25px rgb(101, 98, 98);
+
+                    img{
+                        scale:  1.1;
+                        
+                    }
+                    
+                }
+            }
+
+        }
+        
+    }
+ }
+
+
+
+.producto a:link, .producto a:visited{
+	color: #ececec;
+	display: inline-block;
+	text-decoration: none;
+	background-color: #2c3e50;
+	padding: 1.2rem 3rem;
+	border-radius: 1rem;
+	margin-top: 1rem;
+	font-size: 14px;
+	transition: all 0.2s;
+}
+
+.product0 a:hover{
+	transform: scale(1.1);
+}
+
+.section{
+
+            height: 545px;
+            grid-area: section;
+            background-color: hsl(213, 6%, 63%);
+            border-radius: 0.5rem;
+            border: solid 1px rgb(54, 62, 87);
+
+            p{
+                width: 100%;
+            }
+        }

@@ -1,0 +1,53 @@
+//variables
+
+@import "../utilidades/variables";
+
+
+/*estilos de header*/
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+
+    nav{
+        background-color:$color-principal-nav;
+
+        div{
+            a{
+                img{
+                    width: 250px;
+                    height: 70px;
+                }
+            }
+        }
+        }
+
+    nav{
+        div{
+            div{
+                .color-menu:hover{
+                    border-bottom: 2px solid rgb(88, 193, 224);color: whitesmoke;
+                }
+
+                b{
+                     color: whitesmoke;
+                     font-size: 18px;
+                }
+            }
+        }
+    }    
+
+}
+
+header{
+    nav{
+        .container-fluid{
+            .navbar-toggler{
+                background-color: whitesmoke;
+            }
+        }
+    }
+}

@@ -1,0 +1,46 @@
+//variables
+
+@import "../utilidades/variables";
+@import "../utilidades/mixin";
+@import "../utilidades/extend";
+
+
+/*home,estilos*/
+
+main{
+
+    .banner{
+        margin-top: 5rem;
+        
+
+        img{
+            height: 100%;
+            width: 100%;
+        }
+    }
+    
+    .title-productos-destacados{ 
+        @include titulos;
+        
+        b{
+       
+        @extend %border;
+        }
+       
+    }
+            
+    .productos-destacados{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        img{
+            height: 320px;
+            width: 290px;
+            margin: 20px;
+            border: solid 2px rgb(100, 97, 97);
+        }
+    }
+
+}
+

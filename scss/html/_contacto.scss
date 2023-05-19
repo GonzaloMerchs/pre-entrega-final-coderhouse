@@ -1,0 +1,66 @@
+//variables
+
+@import "../utilidades/variables";
+@import "../utilidades/mixin";
+@import "../utilidades/extend";
+
+/*contacto, estilos*/
+
+main{
+
+    .title-contactanos{
+        
+        @include titulos;
+        b{
+          @extend %border;  
+        }
+        
+        
+    }
+
+    .contacto-form{
+        width: 500px;
+        margin: 0 auto;
+        border: 1px solid #393232;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+        background-color:#101920 ;
+
+        label{
+
+            display: block;
+            margin-bottom: 10px;
+            color: whitesmoke;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            resize: none;
+        }
+
+        input[type="submit"] {
+
+            background-color: whitesmoke;
+            color: #2b2828;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+          }
+      
+          input[type="submit"]:hover {
+            background-color: #2d95b5;
+            color: whitesmoke;
+          }
+    }
+}
